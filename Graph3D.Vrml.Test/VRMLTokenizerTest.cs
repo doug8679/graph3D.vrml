@@ -9,13 +9,14 @@ namespace Graph3D.Vrml.Test {
     public class VRMLTokenizerTest {
         [Test]
         public void TokenizerTest() {
-            using (var stream = GetType().Assembly.GetManifestResourceStream(GetType(), "Ant.WRL")) {
+            //using (var stream = GetType().Assembly.GetManifestResourceStream(GetType(), "Ant.WRL")) {
+            using (var stream = GetType().Assembly.GetManifestResourceStream(GetType(), "Projection Works Test.wrl")) {
                 var tokenizer = new Vrml97Tokenizer(stream);
                 int count = 0;
                 while (tokenizer.ReadNextToken().Type != VRML97TokenType.EOF) {
                     count++;
                 }
-                Assert.AreEqual(39343, count, "Check node count");
+                Assert.AreEqual(2478221, count, "Check node count");
             }
         }
 

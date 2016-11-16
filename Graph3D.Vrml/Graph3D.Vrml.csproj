@@ -106,6 +106,7 @@
     <Compile Include="Nodes\Sensors\TimeSensorNode.cs" />
     <Compile Include="Nodes\ShapeNode.cs" />
     <Compile Include="Nodes\TextureCoordinateNode.cs" />
+    <Compile Include="Nodes\WorldInfoNode.cs" />
     <Compile Include="Parser\ChildAcceptor.cs" />
     <Compile Include="Parser\FieldParser.cs" />
     <Compile Include="Parser\InvalidEventInException.cs" />

@@ -68,5 +68,6 @@ namespace Graph3D.Vrml.Nodes {
 
         void Visit(ViewpointNode node);
 
+        void Visit(WorldInfoNode node);
     }
 }

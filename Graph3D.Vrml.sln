@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40418.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph3D.Vrml", "Graph3D.Vrml\Graph3D.Vrml.csproj", "{7685A6ED-73A0-4CFD-A04D-C8CD3C29E83C}"
 EndProject
@@ -19,6 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ED5EFE
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B1884F2-61B2-4A32-A0C9-8669F48C34CD}"
+	ProjectSection(SolutionItems) = preProject
+		Projection Works Test.wrl = Projection Works Test.wrl
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VrmlParseTest", "VrmlParseTest\VrmlParseTest.csproj", "{39A466DA-712E-48E3-A9BF-B8BA25D0CA23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +40,10 @@ Global
 		{61D29E31-A1F6-4B09-9423-A7D185B172A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61D29E31-A1F6-4B09-9423-A7D185B172A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61D29E31-A1F6-4B09-9423-A7D185B172A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A466DA-712E-48E3-A9BF-B8BA25D0CA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A466DA-712E-48E3-A9BF-B8BA25D0CA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A466DA-712E-48E3-A9BF-B8BA25D0CA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A466DA-712E-48E3-A9BF-B8BA25D0CA23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

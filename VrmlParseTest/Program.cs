@@ -1,20 +1,14 @@
 ﻿using Graph3D.Vrml.Tokenizer;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Graph3D.Vrml;
-using Graph3D.Vrml.Nodes;
-using Graph3D.Vrml.Nodes.Appearance;
-using Graph3D.Vrml.Nodes.Appearance.Texture;
-using Graph3D.Vrml.Nodes.Bindable;
-using Graph3D.Vrml.Nodes.Geometry;
-using Graph3D.Vrml.Nodes.Grouping;
-using Graph3D.Vrml.Nodes.Interpolation;
-using Graph3D.Vrml.Nodes.LightSources;
-using Graph3D.Vrml.Nodes.Sensors;
 using Graph3D.Vrml.Parser;
 
 namespace VrmlParseTest
@@ -23,6 +17,18 @@ namespace VrmlParseTest
     {
         static void Main(string[] args)
         {
+            /*try {
+                Browser browser = new Browser();
+                var sw = Stopwatch.StartNew();
+                var nodes = browser.createVrmlFromString(File.ReadAllText(args[0]));
+                sw.Stop();
+                Console.WriteLine($"Processing of VRML with browser took {sw.ElapsedMilliseconds}ms");
+                foreach ( var node in nodes ) {
+                    Console.WriteLine($"node name: {node.name}, node type: {node.GetType().Name}");
+                }
+            } catch ( Exception ex ) {
+                Console.Error.WriteLine(ex);
+            }*/
             try {
                 VrmlScene scene;
                 using (var stream = System.IO.File.OpenRead(args[0])) {
@@ -31,7 +37,7 @@ namespace VrmlParseTest
                     var parser = new VrmlParser(tokenizer);
                     scene = new VrmlScene();
                     parser.Parse(scene);
-                    var visitor = new TestNodeVisitor();
+                    var visitor = new DocumentingVisitor();
                     visitor.Visit(scene.root);
                 }
             } catch (Exception ex) {
@@ -39,44 +45,5 @@ namespace VrmlParseTest
             }
             Console.ReadLine();
         }
-    }
-
-    public class TestNodeVisitor : INodeVisitor {
-        #region Implementation of INodeVisitor
-
-        public void Visit(AnchorNode node) {
-            Console.WriteLine(node);
-        }
-        public void Visit(AppearanceNode node) { Console.WriteLine(node); }
-        public void Visit(BackgroundNode node) { Console.WriteLine(node); }
-        public void Visit(BoxNode node) { Console.WriteLine(node); }
-        public void Visit(ColorNode node) { Console.WriteLine(node); }
-        public void Visit(CoordinateInterpolatorNode node) { Console.WriteLine(node); }
-        public void Visit(CoordinateNode node) { Console.WriteLine(node); }
-        public void Visit(CylinderNode node) { Console.WriteLine(node); }
-        public void Visit(ProtoNode node) { Console.WriteLine(node); }
-        public void Visit(DirectionalLightNode node) { Console.WriteLine(node); }
-        public void Visit(ExtrusionNode node) { Console.WriteLine(node); }
-        public void Visit(GroupNode node) { Console.WriteLine(node); }
-        public void Visit(IndexedFaceSetNode node) { Console.WriteLine(node); }
-        public void Visit(MaterialNode node) { Console.WriteLine(node); }
-        public void Visit(NavigationInfoNode node) { Console.WriteLine(node); }
-        public void Visit(NormalNode node) { Console.WriteLine(node); }
-        public void Visit(OrientationInterpolatorNode node) { Console.WriteLine(node); }
-        public void Visit(PixelTextureNode node) { Console.WriteLine(node); }
-        public void Visit(PointLightNode node) { Console.WriteLine(node); }
-        public void Visit(PositionInterpolatorNode node) { Console.WriteLine(node); }
-        public void Visit(ScalarInterpolationNode node) { Console.WriteLine(node); }
-        public void Visit(SceneGraphNode node) { Console.WriteLine(node); }
-        public void Visit(ScriptNode node) { Console.WriteLine(node); }
-        public void Visit(ShapeNode node) { Console.WriteLine(node); }
-        public void Visit(SphereNode node) { Console.WriteLine(node); }
-        public void Visit(TextureCoordinateNode node) { Console.WriteLine(node); }
-        public void Visit(TimeSensorNode node) { Console.WriteLine(node); }
-        public void Visit(TransformNode node) { Console.WriteLine(node); }
-        public void Visit(ViewpointNode node) { Console.WriteLine(node); }
-        public void Visit(WorldInfoNode node) { Console.WriteLine(node); }
-
-        #endregion
     }
 }

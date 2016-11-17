@@ -2,10 +2,10 @@
 <package >
   <metadata>
     <id>Graph3D.Vrml</id>
-    <version>1.0</version>
-    <authors>Sergey Savchuk</authors>
+    <version>1.1</version>
+    <authors>Sergey Savchuk, Doug Braxton</authors>
     <owners>Sergey Savchuk</owners>
-    <projectUrl>https://github.com/SavchukSergey/graph3D.vrml</projectUrl>
+    <projectUrl>https://github.com/doug8679/graph3D.vrml</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Vrml parser</description>
     <copyright>Copyright 2015</copyright>

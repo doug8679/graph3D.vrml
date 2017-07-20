@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Framework_4.0_Solution\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,6 +81,8 @@
     <Compile Include="Nodes\Bindable\ViewpointNode.cs" />
     <Compile Include="Nodes\ColorNode.cs" />
     <Compile Include="Nodes\CoordinateNode.cs" />
+    <Compile Include="Nodes\Geometry\ConeNode.cs" />
+    <Compile Include="Nodes\Geometry\IndexedLineSetNode.cs" />
     <Compile Include="Nodes\ProtoNode.cs" />
     <Compile Include="Nodes\Geometry\BoxNode.cs" />
     <Compile Include="Nodes\Geometry\CylinderNode.cs" />
@@ -148,6 +154,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Graph3D.Vrml.nuspec" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

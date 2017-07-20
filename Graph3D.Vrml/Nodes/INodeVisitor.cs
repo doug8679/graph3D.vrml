@@ -36,6 +36,8 @@ namespace Graph3D.Vrml.Nodes {
 
         void Visit(IndexedFaceSetNode node);
 
+        void Visit(IndexedLineSetNode node);
+
         void Visit(MaterialNode node);
 
         void Visit(NavigationInfoNode node);
@@ -69,5 +71,6 @@ namespace Graph3D.Vrml.Nodes {
         void Visit(ViewpointNode node);
 
         void Visit(WorldInfoNode node);
+        void Visit(ConeNode node);
     }
 }
